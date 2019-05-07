@@ -1,0 +1,10 @@
+server:
+  port: 1112                #指定该Eureka实例的端口 8761
+eureka:
+  instance:
+    hostname: localhost    # 指定该Eureka实例的主机名
+  client:
+    registerWithEureka: false  # 该应用为注册中心，设置false，代表不向注册中心注册自己
+    fetchRegistry: false   # 由于注册中心的职责就是维护服务实例，它并不需要去检索服务，所以也设置为false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
