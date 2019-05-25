@@ -9,8 +9,8 @@
 	<packaging>pom</packaging>
 
 	<modules>
-		<module>microservice-eureka-server</module>
-		<module>microservice-eureka-hello</module>
+		<module>microService-eureka-server</module>
+		<module>microService-eureka-hello</module>
 		<module>cloud-blog-pojo</module>
 	</modules>
 
