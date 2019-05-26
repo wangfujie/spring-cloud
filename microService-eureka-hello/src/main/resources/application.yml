@@ -1,0 +1,23 @@
+server:
+  port: 8001
+
+#客户端名称
+spring:
+  application:
+    name: hello-service
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1112/eureka/
+
+
+
+#配置注册中心显示的注册信息
+info:
+  app.name: hello-service
+  company.name: wangfj
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+
+

@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.wangfj</groupId>
-    <artifactId>microservice-eureka-server</artifactId>
+    <artifactId>microService-eureka-server</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <name>microservice-eureka-server</name>
-    <description>microservice-eureka-server project for Spring Boot</description>
+    <name>microService-eureka-server</name>
+    <description>microService-eureka-server project for Spring Boot</description>
 
     <parent>
         <groupId>com.wangfj</groupId>

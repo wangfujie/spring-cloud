@@ -4,9 +4,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.wangfj</groupId>
-    <artifactId>microservice-eureka-hello</artifactId>
+    <artifactId>microService-eureka-hello</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>microservice-eureka-hello</name>
+    <name>microService-eureka-hello</name>
     <description>Demo project for Spring Boot</description>
 
     <parent>
@@ -37,6 +37,17 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency>
+
+        <!-- actuator监控信息完善 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
     </dependencies>
 

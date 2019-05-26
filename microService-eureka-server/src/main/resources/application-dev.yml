@@ -1,5 +1,5 @@
 server:
-  port: 1112                #指定该Eureka实例的端口 8761
+  port: 1112                #指定该Eureka实例的端口 1112
 eureka:
   instance:
     hostname: localhost    # 指定该Eureka实例的主机名
