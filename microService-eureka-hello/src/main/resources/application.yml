@@ -10,6 +10,8 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:1112/eureka/
+  instance:
+    instance-id: hello-service  #status前面的名字，（UP (1) - DESKTOP-TJD98J9:hello-service:8001 ==> UP (1) - hello-service）
 
 
 
