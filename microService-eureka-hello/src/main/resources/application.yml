@@ -11,8 +11,7 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:1112/eureka/
   instance:
-    instance-id: hello-service-8001  #实例名status，前面的名字，（UP (1) - DESKTOP-TJD98J9:hello-service:8001 ==> UP (1) - hello-service）
-
+    instance-id: hello-service-8001  #实例名status，前面的名字，（UP (1) - DESKTOP-TJD98J9:hello-service:8001 ==> UP (1) - hello-service-8001）
 
 
 #配置注册中心显示的注册信息

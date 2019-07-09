@@ -1,0 +1,13 @@
+server:
+  port: 8005
+
+#客户端名称(微服务名称)
+spring:
+  application:
+    name: consul-service
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+
+

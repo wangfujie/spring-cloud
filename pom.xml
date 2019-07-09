@@ -11,6 +11,7 @@
 	<modules>
 		<module>microService-eureka-server</module>
 		<module>microService-eureka-hello</module>
+		<module>microService-consul-client</module>
 		<module>cloud-blog-pojo</module>
 	</modules>
 
@@ -56,10 +57,6 @@
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>${mysql.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
 		</dependency>
 	</dependencies>
 	<dependencyManagement>
