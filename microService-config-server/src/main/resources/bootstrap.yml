@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: config-server
+  profiles:
+    #native表示本地方式
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          # 配置文件存放路径
+          search-locations: classpath:/conf
+server:
+  port: 1111
