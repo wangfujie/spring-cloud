@@ -1,0 +1,49 @@
+# Tomcat
+server:
+  error:
+    path: /error/404.html
+  session:
+    timeout: 1200
+  tomcat:
+    uri-encoding: UTF-8
+    max-threads: 1000
+    min-spare-threads: 30
+  context-path: /blog
+
+# 环境 dev|test|pro
+spring:
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    druid:
+      max-wait: 20000
+      initial-size: 50
+      min-idle: 50
+      max-active: 500
+      #是否启用StatViewServlet默认值true
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /sys/druid/*
+# 后台返回前端时间类型格式化显示
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+# Mybatis配置
+mybatis-plus:
+  mapperLocations: classpath:/mappers/**/*.xml
+  type-aliases-package: com.blob.pojo.entity
+  global-config:
+    #主键类型  0:"数据库ID自增", 1:"用户输入ID",2:"全局唯一ID (数字类型唯一ID)", 3:"全局唯一ID UUID";
+    id-type: 3
+    #字段策略 0:"忽略判断",1:"非 NULL 判断"),2:"非空判断"
+    field-strategy: 2
+    #驼峰下划线转换
+    db-column-underline: true
+    refresh-mapper: true
+  # 刷新mapper调试神器
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+
