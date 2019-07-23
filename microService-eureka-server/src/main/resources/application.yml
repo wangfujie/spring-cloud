@@ -1,4 +1,0 @@
-# 环境 dev|test|pro
-spring:
-  profiles:
-    active: dev
