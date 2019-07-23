@@ -1,13 +1,24 @@
-spring:
-  application:
-    name: eureka-server
-  profiles:
-    active: dev
-  # 配置中心存放配置文件格式：${application.name}-${profiles.active}.myl
-  # 例如static-configer-dev.yml、static-configer-qas.yml
-  # 通过上述两个配置去配置中心读取对应的配置文件
-  cloud:
-    config:
-      # uri 配置中心地址
-      uri: http://localhost:1111
-      fail-fast: true
+#spring:
+#  application:
+#    name: eureka-server
+#  profiles:
+#    active: dev
+#  # 配置中心存放配置文件格式：${application.name}-${profiles.active}.myl
+#  # 例如static-configer-dev.yml、static-configer-qas.yml
+#  # 通过上述两个配置去配置中心读取对应的配置文件
+#  cloud:
+#    config:
+#      # uri 配置中心地址
+#      uri: http://localhost:1111
+#      fail-fast: true
+
+server:
+  port: 1112                #指定该Eureka实例的端口 1112
+eureka:
+  instance:
+    hostname: eureka-server    # 指定该Eureka实例的主机名
+  client:
+    registerWithEureka: false  # 该应用为注册中心，设置false，代表不向注册中心注册自己
+    fetchRegistry: false   # 由于注册中心的职责就是维护服务实例，它并不需要去检索服务，所以也设置为false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/

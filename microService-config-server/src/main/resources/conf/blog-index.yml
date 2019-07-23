@@ -1,0 +1,131 @@
+server:
+  port: 8088                #配置端口号
+  error:
+    path: /error/404.html
+  session:
+    timeout: 1200
+  tomcat:
+    uri-encoding: UTF-8
+    max-threads: 1000
+    min-spare-threads: 30
+  context-path: /blog
+
+#
+spring:
+  application:
+    name: blog-index
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    druid:
+      max-wait: 20000
+      initial-size: 50
+      min-idle: 50
+      max-active: 500
+      #是否启用StatViewServlet默认值true
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /sys/druid/*
+  # 后台返回前端时间类型格式化显示
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+# Mybatis配置
+mybatis-plus:
+  mapperLocations: classpath:/mappers/**/*.xml
+  type-aliases-package: com.blob.pojo.entity
+  global-config:
+    #主键类型  0:"数据库ID自增", 1:"用户输入ID",2:"全局唯一ID (数字类型唯一ID)", 3:"全局唯一ID UUID";
+    id-type: 3
+    #字段策略 0:"忽略判断",1:"非 NULL 判断"),2:"非空判断"
+    field-strategy: 2
+    #驼峰下划线转换
+    db-column-underline: true
+    refresh-mapper: true
+  # 刷新mapper调试神器
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+
+#注册中心配置
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1112/eureka/
+  instance:
+    instance-id: blog-index  #实例名status，前面的名字，（UP (1) - DESKTOP-TJD98J9:hello-service:8001 ==> UP (1) - hello-service-8001）
+
+# 富文本上传图片后显示本地图片配置，增加映射
+image:
+  upload-path: E:/upload-path/
+
+# 资源文件上传路径
+resource:
+  upload-path: E:/resource-file/
+
+---
+# mysql路径，用户名、密码 以及驱动类
+spring:
+  profiles:
+    active: dev
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/my_blog?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2B8&amp
+    username: root
+    password: root
+
+  mvc:
+    static-path-pattern: /**
+  resources:
+    static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,file:${image.upload-path},file:${resource.upload-path}
+
+  # REDIS (RedisProperties)
+  redis:
+    database: 0            # Redis数据库索引（默认为0）
+    host: 127.0.0.1   # Redis服务器地址
+    port: 6379             # Redis服务器连接端口
+    password:       # Redis服务器连接密码（默认为空）
+    pool:
+      max-active: 8 # 连接池最大连接数（使用负值表示没有限制）
+      max-wait: -1  # 连接池最大阻塞等待时间（使用负值表示没有限制）
+      max-idle: 8   # 连接池中的最大空闲连接
+      min-idle: 0   # 连接池中的最小空闲连接
+    timeout: 0      # 连接超时时间（毫秒）
+
+##################重复提交限制时间和请求接口频率次数限制################
+commit:
+  time-out-time: 10
+  commit-count: 20
+
+---
+# pro配置
+# mysql路径，用户名、密码 以及驱动类
+spring:
+  profiles:
+    active: pro
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/my_blog?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2B8&amp
+    username: root
+    password: root
+
+  mvc:
+    static-path-pattern: /**
+  resources:
+    static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,file:${image.upload-path},file:${resource.upload-path}
+
+  # REDIS (RedisProperties)
+  redis:
+    database: 0            # Redis数据库索引（默认为0）
+    host: 127.0.0.1   # Redis服务器地址
+    port: 6379             # Redis服务器连接端口
+    password:       # Redis服务器连接密码（默认为空）
+    pool:
+      max-active: 8 # 连接池最大连接数（使用负值表示没有限制）
+      max-wait: -1  # 连接池最大阻塞等待时间（使用负值表示没有限制）
+      max-idle: 8   # 连接池中的最大空闲连接
+      min-idle: 0   # 连接池中的最小空闲连接
+    timeout: 0      # 连接超时时间（毫秒）
+
+##################重复提交限制时间和请求接口频率次数限制################
+commit:
+  time-out-time: 10
+  commit-count: 20
