@@ -9,10 +9,13 @@
 	<packaging>pom</packaging>
 
 	<modules>
+		<module>microService-config-server</module>
 		<module>microService-eureka-server</module>
 		<module>microService-eureka-hello</module>
 		<module>microService-consul-client</module>
 		<module>cloud-blog-pojo</module>
+		<module>cloud-blog-common</module>
+		<module>microService-blog-index</module>
 	</modules>
 
 	<parent>
