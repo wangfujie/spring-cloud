@@ -1,6 +1,6 @@
 spring:
   application:
-    name: eureka-server
+    name: zuul-server
   profiles:
     active: dev
   # 配置中心存放配置文件格式：${application.name}-${profiles.active}.myl

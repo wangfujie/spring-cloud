@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.wangfj</groupId>
-    <artifactId>microService-eureka-server</artifactId>
+    <artifactId>microService-zuul-server</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <name>microService-eureka-server</name>
-    <description>microService-eureka-server project for Spring Boot</description>
+    <name>microService-zuul-server</name>
+    <description>microService-zuul-server project for Spring Boot</description>
 
     <parent>
         <groupId>com.wangfj</groupId>
@@ -24,10 +24,7 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-eureka-server</artifactId>
-        </dependency>
+
 
         <!-- 配置中心相关包 -->
         <dependency>
@@ -43,7 +40,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration><!-- 指定该Main Class为全局的唯一入口 -->
-                    <mainClass>com.wangfj.MicroServiceEurekaServerApplication</mainClass>
+                    <mainClass>com.wangfj.MicroServiceZuulApplication</mainClass>
                     <layout>ZIP</layout>
                 </configuration>
             </plugin>
