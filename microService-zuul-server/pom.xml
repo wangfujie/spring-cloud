@@ -24,7 +24,17 @@
     </properties>
 
     <dependencies>
+        <!-- zuul依赖 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zuul</artifactId>
+        </dependency>
 
+        <!-- eureka注册中心依赖 -->
+      <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-eureka</artifactId>
+        </dependency>
 
         <!-- 配置中心相关包 -->
         <dependency>

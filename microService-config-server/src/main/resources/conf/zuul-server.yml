@@ -1,0 +1,20 @@
+server:
+  port: 5580
+
+spring:
+  application:
+    name: zuul-service
+
+zuul:
+  routes:
+    api-a:
+      path: /blog/**
+      serviceId: blog-index  #如果是/blog/**路径下的请求，则跳转到blog-index
+
+#注册中心配置
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1112/eureka/
+  instance:
+    instance-id: zuul-service  #实例名
