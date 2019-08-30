@@ -7,9 +7,12 @@ spring:
 
 zuul:
   routes:
-    api-a:
-      path: /blog/**
+    api-a: #此处可以随便定义，只要保证唯一
+      path: /blog/**  #一个*表示到匹配到一个级别的路径，两个**表示匹配多个级别的路径
       serviceId: blog-index  #如果是/blog/**路径下的请求，则跳转到blog-index
+    api-b:
+      path: /manage/**
+      serviceId: blog-manage  #如果是/manage/**路径下的请求，则跳转到blog-manage
 
 #注册中心配置
 eureka:
