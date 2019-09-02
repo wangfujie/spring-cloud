@@ -83,6 +83,13 @@
 			<artifactId>springfox-swagger-ui</artifactId>
 			<version>${swagger2.version}</version>
 		</dependency>
+
+		<!-- 解决启动报错(Cannot determine embedded database driver class for database type NONE)问题 -->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+        	<scope>runtime</scope>
+		</dependency>
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
